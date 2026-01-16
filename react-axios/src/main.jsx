@@ -4,8 +4,8 @@ import "./index.css";
 
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import App from "./App.jsx";
-import Home from "./routes/Home.jsx";
-import NewPost from "./routes/NewPost.jsx";
+import Home from "./routes/Home/Home.jsx";
+import NewPost from "./routes/NewPost/NewPost.jsx";
 
 const router = createBrowserRouter([
   {
