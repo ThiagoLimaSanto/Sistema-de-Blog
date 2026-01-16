@@ -7,6 +7,8 @@ import App from "./App.jsx";
 import Home from "./routes/Home/Home.jsx";
 import NewPost from "./routes/NewPost/NewPost.jsx";
 import Post from "./routes/Post/Post.jsx";
+import Admin from "./routes/admin/Admin.jsx";
+import EditPost from "./routes/EditPost/EditPost.jsx";
 
 const router = createBrowserRouter([
   {
@@ -23,6 +25,14 @@ const router = createBrowserRouter([
       {
         path: "/posts/:id",
         element: <Post />,
+      },
+      {
+        path: "/admin",
+        element: <Admin />,
+      },
+      {
+        path: "/posts/edit/:id",
+        element: <EditPost />,
       }
     ],
   },

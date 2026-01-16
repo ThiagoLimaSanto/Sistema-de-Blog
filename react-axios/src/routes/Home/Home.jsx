@@ -6,19 +6,17 @@ import api from "../../axios/config";
 const Home = () => {
   const [posts, setPosts] = useState([]);
 
-  const getPosts = async () => {
-    try {
-      const response = await api.get("/posts");
-      setPosts(response.data);
-    } catch (error) {
-      console.log(error);
-    }
-  };
   useEffect(() => {
-    async function fetchData() {
-      await getPosts();
-    }
-    fetchData();
+    const fetchPost = async () => {
+      try {
+        const response = await api.get("/posts");
+        setPosts(response.data);
+      } catch (error) {
+        console.error("Erro ao buscar o post:", error);
+      }
+    };
+
+    fetchPost();
   }, []);
 
   return (
