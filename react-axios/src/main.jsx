@@ -4,6 +4,8 @@ import "./index.css";
 
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import App from "./App.jsx";
+import Home from "./routes/Home.jsx";
+import NewPost from "./routes/NewPost.jsx";
 
 const router = createBrowserRouter([
   {
@@ -11,16 +13,18 @@ const router = createBrowserRouter([
     children: [
       {
         path: "/",
+        element: <Home />,
       },
       {
-        path: "/new"
-      }
+        path: "/new",
+        element: <NewPost />,
+      },
     ],
   },
 ]);
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
-    <App />
+    <RouterProvider router={router} />
   </StrictMode>
 );
